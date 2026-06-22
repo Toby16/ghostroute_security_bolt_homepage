@@ -5,8 +5,27 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
 >
-    <rect x="0" y="0" width="120" height="120" rx="26" fill="#0d1117" />
-    <circle cx="60" cy="60" r="29" stroke="#22c7e0" stroke-width="4" />
-    <line x1="60" y1="47" x2="60" y2="70" stroke="#22c7e0" stroke-width="5" stroke-linecap="round" />
-    <line x1="50" y1="55" x2="70" y2="55" stroke="#22c7e0" stroke-width="5" stroke-linecap="round" />
+    <defs>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect x="0" y="0" width="120" height="120" rx="26" fill="#0d1117"/>
+
+    <path
+        d="M70 14
+           L35 62
+           H56
+           L45 106
+           L88 50
+           H66
+           L70 14Z"
+        fill="#FFD43B"
+        filter="url(#glow)"
+    />
 </svg>
